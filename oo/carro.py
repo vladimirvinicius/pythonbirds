@@ -100,6 +100,7 @@ SUL = 'Sul'
 LESTE = 'Leste'
 OESTE = 'Oeste'
 
+
 class Motor:
     def __init__(self):
         self.velocidade = 0
@@ -110,8 +111,9 @@ class Motor:
     def frear(self):
         self.velocidade -= 2
         self.velocidade = max(0, self.velocidade)
-        #if self.velocidade < 0:
+        # if self.velocidade < 0:
         #    self.velocidade = 0
+
 
 class Direcao:
     rotacao_a_direita_dict = {
@@ -120,30 +122,32 @@ class Direcao:
     rotacao_a_esquerda_dict = {
         NORTE: OESTE, OESTE: SUL, SUL: LESTE, LESTE: NORTE
     }
+
     def __init__(self):
         self.valor = NORTE
 
     def girar_a_direita(self):
         self.valor = self.rotacao_a_direita_dict[self.valor]
-        #if self.valor == NORTE:
+        # if self.valor == NORTE:
         #    self.valor = LESTE
-        #elif self.valor == LESTE:
+        # elif self.valor == LESTE:
         #    self.valor = SUL
-        #elif self.valor == SUL:
+        # elif self.valor == SUL:
         #    self.valor = OESTE
-        #else:
+        # else:
         #    self.valor = NORTE
 
     def girar_a_esquerda(self):
         self.valor = self.rotacao_a_esquerda_dict[self.valor]
-        #if self.valor == NORTE:
+        # if self.valor == NORTE:
         #    self.valor = OESTE
-        #elif self.valor == OESTE:
+        # elif self.valor == OESTE:
         #    self.valor = SUL
-        #elif self.valor == SUL:
+        # elif self.valor == SUL:
         #    self.valor = LESTE
-        #else:
+        # else:
         #    self.valor = NORTE
+
 
 class Carro:
     def __init__(self, direcao, motor):
